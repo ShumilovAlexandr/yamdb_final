@@ -35,7 +35,7 @@ jobs:
       run: |
         # запуск проверки проекта по flake8
         python -m flake8
-        # перейти в папку, содержащую manage.py — 
+        # перейти в папку, содержащую manage.py —
         #<корневая_папка_infra_actions>/infra_actions/manage.py
         cd api_yamdb/
         # запустить написанные разработчиком тесты
