@@ -36,9 +36,10 @@ class Migration(migrations.Migration):
                                         primary_key=True,
                                         serialize=False, verbose_name='ID')),
                 ('text', models.TextField(verbose_name='Автор')),
-                ('pub_date', models.DateTimeField(auto_now_add=True,
-                                                  db_index=True,
-                                                  verbose_name='Дата создания')),
+                ('pub_date', models.DateTimeField(
+                             auto_now_add=True,
+                             db_index=True,
+                             verbose_name='Дата создания')),
             ],
             options={
                 'verbose_name': 'Комментарий',
