@@ -9,9 +9,9 @@ from rest_framework_simplejwt.tokens import AccessToken
 
 from api_yamdb.settings import SENDER_EMAIL
 
+from api.permissions import IsAdmin
 from .models import User
 from .serializers import SignUpSerializer, TokenSerializer, UserSerializer
-from api.permissions import IsAdmin
 
 
 class SignUpViewSet(APIView):
