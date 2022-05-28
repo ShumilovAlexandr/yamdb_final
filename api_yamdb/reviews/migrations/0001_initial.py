@@ -16,7 +16,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Category',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, 
+                ('id', models.AutoField(auto_created=True, primary_key=True,
                                         serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=256,
                                           verbose_name='Категория')),
@@ -33,10 +33,12 @@ class Migration(migrations.Migration):
             name='Comment',
             fields=[
                 ('id', models.AutoField(auto_created=True,
-                                        primary_key=True, serialize=False, verbose_name='ID')),
+                                        primary_key=True,
+                                        serialize=False, verbose_name='ID')),
                 ('text', models.TextField(verbose_name='Автор')),
                 ('pub_date', models.DateTimeField(auto_now_add=True,
-                                                  db_index=True, verbose_name='Дата создания')),
+                                                  db_index=True,
+                                                  verbose_name='Дата создания')),
             ],
             options={
                 'verbose_name': 'Комментарий',
@@ -48,7 +50,9 @@ class Migration(migrations.Migration):
             name='Genre',
             fields=[
                 ('id', models.AutoField(auto_created=True,
-                                        primary_key=True, serialize=False, verbose_name='ID')),
+                                        primary_key=True,
+                                        serialize=False,
+                                        verbose_name='ID')),
                 ('name', models.CharField(max_length=200,
                                           verbose_name='Жанр')),
                 ('slug', models.SlugField(unique=True,
@@ -63,10 +67,13 @@ class Migration(migrations.Migration):
             name='Review',
             fields=[
                 ('id', models.AutoField(auto_created=True,
-                                        primary_key=True, serialize=False, verbose_name='ID')),
+                                        primary_key=True,
+                                        serialize=False,
+                                        verbose_name='ID')),
                 ('text', models.TextField(verbose_name='Текст')),
                 ('pub_date', models.DateTimeField(auto_now_add=True,
-                                                  db_index=True, verbose_name='Дата создания')),
+                                                  db_index=True,
+                                                  verbose_name='Дата создания')),
                 ('score', models.PositiveIntegerField(
                     validators=[django.core.validators.MinValueValidator(1),
                                 django.core.validators.MaxValueValidator(10)],
@@ -82,12 +89,16 @@ class Migration(migrations.Migration):
             name='Title',
             fields=[
                 ('id', models.AutoField(auto_created=True,
-                                        primary_key=True, serialize=False, verbose_name='ID')),
+                                        primary_key=True,
+                                        serialize=False,
+                                        verbose_name='ID')),
                 ('name', models.CharField(max_length=140,
                 verbose_name='Название произведения')),
                 ('year', models.PositiveIntegerField(db_index=True,
-                                                     validators=[django.core.validators.MinValueValidator(0), 
-                                                                 django.core.validators.MaxValueValidator(2021)], verbose_name='Год выпуска')),
+                                                     validators=
+                                                     [django.core.validators.MinValueValidator(0),
+                                                      django.core.validators.MaxValueValidator(2021)],
+                                                      verbose_name='Год выпуска')),
                 ('description', models.TextField(verbose_name='Описание')),
                 ('category', models.ForeignKey(blank=True,
                 null=True, on_delete=django.db.models.deletion.SET_NULL,
