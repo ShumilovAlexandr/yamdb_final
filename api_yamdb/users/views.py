@@ -1,4 +1,3 @@
-from api.permissions import IsAdmin
 from django.contrib.auth.tokens import default_token_generator
 from django.core.mail import send_mail
 from django.shortcuts import get_object_or_404
@@ -10,6 +9,7 @@ from rest_framework_simplejwt.tokens import AccessToken
 
 from api_yamdb.settings import SENDER_EMAIL
 
+from api.permissions import IsAdmin
 from .models import User
 from .serializers import SignUpSerializer, TokenSerializer, UserSerializer
 
