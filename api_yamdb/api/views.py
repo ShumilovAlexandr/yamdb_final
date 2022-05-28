@@ -1,5 +1,3 @@
-from api.permissions import (IsAdminOrReadOnly,
-                             IsAuthorOrModeratorOrAdminOrReadOnly)
 from django.db.models import Avg
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters, mixins, viewsets
@@ -10,6 +8,8 @@ from .filters import TitleFilter
 from .serializers import (CategorySerializer, CommentSerializer,
                           GenreSerializer, ReviewSerializer,
                           TitleReadSerializer, TitleWriteSerializer)
+from api.permissions import (IsAdminOrReadOnly,
+                             IsAuthorOrModeratorOrAdminOrReadOnly)
 
 
 class MixinSet(mixins.CreateModelMixin,
