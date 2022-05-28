@@ -26,25 +26,28 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='review',
             name='title',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE,
-                                    related_name='reviews', to='reviews.Title',
-                                    verbose_name='Произведение'),
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name='reviews', to='reviews.Title',
+                verbose_name='Произведение'),
         ),
         migrations.AddField(
             model_name='comment',
             name='author',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE,
-                                    related_name='comments',
-                                    to=settings.AUTH_USER_MODEL,
-                                    verbose_name='Автор'),
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name='comments',
+                to=settings.AUTH_USER_MODEL,
+                verbose_name='Автор'),
         ),
         migrations.AddField(
             model_name='comment',
             name='review',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE,
-                                    related_name='comments',
-                                    to='reviews.Review',
-                                    verbose_name='Комментарий'),
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name='comments',
+                to='reviews.Review',
+                verbose_name='Комментарий'),
         ),
         migrations.AlterUniqueTogether(
             name='review',
