@@ -6,7 +6,7 @@ on: [push]
 
 jobs:
   tests:
-    # «Раннер» — создание изолированного окружения с последней версией Ubuntu 
+    # «Раннер» — создание изолированного окружения с последней версией Ubuntu
     runs-on: ubuntu-latest
 
     steps:
@@ -31,12 +31,8 @@ jobs:
         cd api_yamdb/
         pip install -r requirements.txt 
         
-    - name: Test with flake8 and django tests
+    - name: Test with flake8 and pytest
       run: |
-        # запуск проверки проекта по flake8
         python -m flake8
-        # перейти в папку, содержащую manage.py —
-        #<корневая_папка_infra_actions>/infra_actions/manage.py
         cd api_yamdb/
-        # запустить написанные разработчиком тесты
-        python manage.py test
+        python -m flake8 --exclude ./api_yamdb/,./tests
