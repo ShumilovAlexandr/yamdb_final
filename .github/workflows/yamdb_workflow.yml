@@ -2,9 +2,9 @@
 
 name: yamdb_workflow
 
-on: [push]
-brances:
--master
+on:
+  push:
+    branches: [ master ]
 
 jobs:
   tests:
