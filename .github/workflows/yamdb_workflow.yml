@@ -3,6 +3,8 @@
 name: yamdb_workflow
 
 on: [push]
+brances:
+-master
 
 jobs:
   tests:
