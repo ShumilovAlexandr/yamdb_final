@@ -25,11 +25,8 @@ jobs:
         
     - name: Install dependencies
       run: | 
-        # обновление pip
         python -m pip install --upgrade pip 
-        # установка flake8 и его плагинов
         pip install flake8 pep8-naming flake8-broken-line flake8-return flake8-isort
-        # установка зависимостей
         pip install -r api_yamdb/requirements.txt 
         
     - name: Test with flake8 and pytest
@@ -71,10 +68,8 @@ jobs:
         username: ${{ secrets.USER }}
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
-        script: |
-          # Выполняет pull образа с DockerHub 
+        script: | 
           sudo docker pull avshumilov/api_yamdb:latest
-          #остановка всех контейнеров
           sudo docker stop $(sudo docker ps -a -q)
           sudo docker run --rm -d -p 5000:5000 avshumilov/api_yamdb:latest
   send_message:
