@@ -1,13 +1,10 @@
 # версия docker-compose
-version: '20.10.14'
+version: '3.7'
 
-# имена и описания контейнеров, которые должны быть развёрнуты
 services:
-  # описание контейнера db
+
   db:
-    # образ, из которого должен быть запущен контейнер
     image: postgres:latest
-    # volume и связанная с ним директория в контейнере
     volumes:
       - /var/lib/postgresql/data/
     env_file:
@@ -16,20 +13,16 @@ services:
     image: avshumilov/api_yamdb:latest
     restart: always
     volumes:
-      # Контейнер web будет работать с данными, хранящиеся в томе static_value, 
-      # через свою директорию /app/static/
       - static_value:/app/static/
-      # Данные, хранящиеся в томе media_value, будут доступны в контейнере web 
-      # через директорию /app/media/
       - media_value:/app/media/
     # "зависит от", 
     depends_on:
       - db
+    links:
+      - db:db
     env_file:
       - ./.env
-  # Новый контейнер
   nginx:
-    # образ, из которого должен быть запущен контейнер
     image: nginx:1.21.3-alpine
 
     # запросы с внешнего порта 80 перенаправляем на внутренний порт 80
