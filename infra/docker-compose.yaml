@@ -4,7 +4,7 @@ version: '3.7'
 services:
 
   db:
-    image: postgres:latest
+    image: postgres:13.0-alpine
     volumes:
       - /var/lib/postgresql/data/
     env_file:
@@ -24,7 +24,6 @@ services:
       - ./.env
   nginx:
     image: nginx:1.21.3-alpine
-
     # запросы с внешнего порта 80 перенаправляем на внутренний порт 80
     ports:
       - "80:80"
