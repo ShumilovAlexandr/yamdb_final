@@ -10,6 +10,8 @@ SECRET_KEY = os.getenv('SECRET_KEY', default=546842153151)
 
 DEBUG = False
 
+AUTH_USER_MODEL = 'users.User'
+
 ALLOWED_HOSTS = ['51.250.28.8', 'localhost']
 
 INSTALLED_APPS = [
@@ -98,11 +100,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -112,7 +113,6 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 5,
 }
 
-AUTH_USER_MODEL = 'users.User'
 
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'sent_emails')
