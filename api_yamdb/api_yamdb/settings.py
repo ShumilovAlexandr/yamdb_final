@@ -12,7 +12,7 @@ DEBUG = False
 
 AUTH_USER_MODEL = 'users.User'
 
-ALLOWED_HOSTS = ['51.250.28.8', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['51.250.28.8', 'localhost', '127.0.0.1', 'web']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -101,7 +101,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATIC_ROOT = BASE_DIR + 'static'
+STATIC_ROOT = 'api_yamdb/static'
 
 STSTICFILES_DIRS = BASE_DIR + 'staticfiles/'
 
