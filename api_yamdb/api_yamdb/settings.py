@@ -101,7 +101,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATIC_ROOT = 'api_yamdb/static'
+STATIC_ROOT = 'static'
 
 STSTICFILES_DIRS = BASE_DIR + 'staticfiles/'
 
