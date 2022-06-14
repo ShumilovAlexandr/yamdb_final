@@ -1,5 +1,5 @@
 # версия docker-compose
-version: '1.29.2'
+version: '3'
 
 services:
 
@@ -12,6 +12,8 @@ services:
   web:
     image: avshumilov/api_yamdb:latest
     restart: always
+    ports:
+      - '5000:5000'
     volumes:
       - static_value:/app/static/
       - media_value:/app/media/
