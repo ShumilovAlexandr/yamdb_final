@@ -19,8 +19,8 @@ services:
     # "зависит от", 
     depends_on:
       - db
-#    links:
-#      - db:db
+    links:
+      - db:db
     env_file:
       - ./.env
   nginx:
