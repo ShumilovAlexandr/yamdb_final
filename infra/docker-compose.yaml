@@ -24,7 +24,7 @@ services:
     ports:
       - "5000:80"
     volumes:
-      - ./shumilov/default.conf
+      - .shumilov/default.conf
 
       # Контейнер nginx  работать с данными, хранящиеся в томе static_value, 
       # через свою директорию /var/html/static/
