@@ -2,7 +2,7 @@
 
 name: yamdb_workflow
 
-on:
+on: 
   push:
    branches: [master]
 
