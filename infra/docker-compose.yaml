@@ -22,7 +22,7 @@ services:
   nginx:
     image: nginx:1.21.3-alpine
     ports:
-      - "8080:80"
+      - "80:80"
     volumes:
       - ./shumilov/default.conf
 
