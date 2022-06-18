@@ -26,7 +26,7 @@ services:
     volumes:
       - ./shumilov/default.conf
 
-      # Контейнер nginx будет работать с данными, хранящиеся в томе static_value, 
+      # Контейнер nginx  работать с данными, хранящиеся в томе static_value, 
       # через свою директорию /var/html/static/
       - static_value:/var/html/static/
 
