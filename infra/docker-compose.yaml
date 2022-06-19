@@ -24,7 +24,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - .nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
 
       # Контейнер nginx  работать с данными, хранящиеся в томе static_value, 
       # через свою директорию /var/html/static/
