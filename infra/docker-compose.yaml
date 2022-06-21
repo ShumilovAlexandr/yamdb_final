@@ -9,7 +9,6 @@ services:
     env_file:
       - ./.env
   web:
-#    build: .
     image: avshumilov/api_yamdb:latest
     restart: always
     volumes:
