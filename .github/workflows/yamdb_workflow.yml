@@ -71,7 +71,8 @@ jobs:
         username: ${{ secrets.USER }}
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
-        script: | 
+        script: |
+          sudo docker pull avshumilov/api_yamdb:latest
           sudo docker-compose stop
           sudo docker-compose rm web
           touch .env
