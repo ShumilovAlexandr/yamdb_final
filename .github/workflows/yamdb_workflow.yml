@@ -4,7 +4,7 @@ name: yamdb_workflow
 
 on: 
   push:
-   branches: [master] 
+   branches: [master]
 
 jobs:
   tests:
@@ -71,7 +71,11 @@ jobs:
         username: ${{ secrets.USER }}
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
+<<<<<<< HEAD
         script: |
+=======
+        script: | 
+>>>>>>> d08a28890dff6f2d49ac0e5b111fc36a92515f73
           sudo docker pull avshumilov/api_yamdb:latest
           sudo docker-compose stop
           sudo docker-compose rm web
