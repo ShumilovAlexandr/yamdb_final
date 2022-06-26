@@ -15,9 +15,9 @@
 - **Суперюзер Django** — обладет правами администратора (`admin`)
 
 Адреса для проверки работы приложения:
-1) http://51.250.28.8:5000/api/v1/
-2) http://51.250.28.8:5000/admin
-3) http://51.250.28.8:5000/redoc
+1) http://51.250.28.8/api/v1/
+2) http://51.250.28.8/admin
+3) http://51.250.28.8/redoc
 
 
 ![example workflow](https://github.com/ShumilovAlexandr/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
