@@ -72,7 +72,6 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
 <<<<<<< HEAD
-        script: |
 =======
         script: | 
 >>>>>>> d08a28890dff6f2d49ac0e5b111fc36a92515f73
