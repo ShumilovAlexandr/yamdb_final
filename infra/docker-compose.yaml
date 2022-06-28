@@ -1,3 +1,4 @@
+# версия докера
 version: '2.6' 
 
 services:
@@ -7,7 +8,6 @@ services:
       - /var/lib/postgresql/data/
     env_file:
       - ./.env
-
   web:
     image: avshumilov/api_yamdb:latest
     restart: always
