@@ -1,4 +1,3 @@
-# версия докера
 version: '2.6' 
 
 services:
@@ -13,8 +12,8 @@ services:
     image: avshumilov/api_yamdb:v3
     restart: always
     volumes:
-      - static_value:/static/
-      - media_value:/media/
+      - static_value:/app/static/
+      - media_value:/app/media/
     depends_on:
       - db
     env_file:
