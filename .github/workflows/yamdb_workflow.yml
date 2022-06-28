@@ -4,7 +4,7 @@ name: yamdb_workflow
 
 on: 
   push:
-   branches: [master]
+   branches: [master] 
 
 jobs:
   tests:
@@ -57,7 +57,7 @@ jobs:
       with:
         context: ./api_yamdb/
         push: true
-        tags: avshumilov/api_yamdb:latest
+        tags: avshumilov/api_yamdb:v3
         
   deploy:
     runs-on: ubuntu-latest
@@ -72,7 +72,7 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
         script: | 
-          sudo docker pull avshumilov/api_yamdb:latest
+          sudo docker pull avshumilov/api_yamdb:v3
           sudo docker-compose stop
           sudo docker-compose rm web
           touch .env
