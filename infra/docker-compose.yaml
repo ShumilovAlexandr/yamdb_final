@@ -10,7 +10,6 @@ services:
     env_file:
       - ./.env
 
-
   web:
     image: avshumilov/api_yamdb:v3
     restart: always
@@ -21,7 +20,6 @@ services:
       - db
     env_file:
       - ./.env
-
 
   nginx:
     image: nginx:1.21.3-alpine
