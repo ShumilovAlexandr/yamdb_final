@@ -1,4 +1,3 @@
-# версия docker-compose
 version: '2.6' 
 
 services:
@@ -8,13 +7,13 @@ services:
       - /var/lib/postgresql/data/
     env_file:
       - ./.env
+
   web:
-#    build: ../api_yamdb
     image: avshumilov/api_yamdb:latest
     restart: always
     volumes:
-      - static_value:/app/static/
-      - media_value:/app/media/
+      - static_value:/static/
+      - media_value:/media/
     depends_on:
       - db
     env_file:
