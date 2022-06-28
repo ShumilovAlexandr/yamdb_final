@@ -72,7 +72,7 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
         script: | 
-          sudo docker pull avshumilov/api_yamdb:latest
+          sudo docker pull avshumilov/api_yamdb:v3
           sudo docker-compose stop
           sudo docker-compose rm web
           touch .env
