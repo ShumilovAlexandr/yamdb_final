@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions 
 
-name: yamdb_workflow
+name: yamdb_workflow 
 
 on: 
   push:
@@ -23,7 +23,7 @@ jobs:
         # Выбор версии Python
         python-version: 3.7
         
-    - name: Install dependencies
+    - name: Install dependencies 
       run: | 
         # обновление pip
         python -m pip install --upgrade pip 
