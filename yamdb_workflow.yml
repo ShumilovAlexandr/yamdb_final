@@ -1,10 +1,8 @@
-# This is a basic workflow to help you get started with Actions 
-
-name: yamdb_workflow 
+name: yamdb_workflow
 
 on: 
   push:
-   branches: [master]
+   branches: [master] 
 
 jobs:
   tests:
@@ -23,7 +21,7 @@ jobs:
         # Выбор версии Python
         python-version: 3.7
         
-    - name: Install dependencies 
+    - name: Install dependencies
       run: | 
         # обновление pip
         python -m pip install --upgrade pip 
@@ -72,17 +70,17 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
         script: |
-          sudo docker pull avshumilov/api_yamdb:latest
-          sudo docker-compose stop
-          sudo docker-compose rm web
-          touch .env
-          echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
-          echo DB_NAME=${{ secrets.DB_NAME }} >> .env
-          echo POSTGRES_USER=${{ secrets.POSTGRES_USER }} >> .env
-          echo POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} >> .env
-          echo DB_HOST=${{ secrets.DB_HOST }} >> .env
-          echo DB_PORT=${{ secrets.DB_PORT }} >> .env
-          sudo docker-compose up -d
+            sudo docker pull avshumilov/api_yamdb:latest
+            sudo docker-compose stop
+            sudo docker-compose rm web
+            touch .env
+            echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
+            echo DB_NAME=${{ secrets.DB_NAME }} >> .env
+            echo POSTGRES_USER=${{ secrets.POSTGRES_USER }} >> .env
+            echo POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} >> .env
+            echo DB_HOST=${{ secrets.DB_HOST }} >> .env
+            echo DB_PORT=${{ secrets.DB_PORT }} >> .env
+            sudo docker-compose up -d
           
   send_message:
     runs-on: ubuntu-latest 
