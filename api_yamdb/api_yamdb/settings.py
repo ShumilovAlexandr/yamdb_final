@@ -9,7 +9,6 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 SECRET_KEY = os.getenv('SECRET_KEY', default=546842153151)
 
 DEBUG = False
-
 AUTH_USER_MODEL = 'users.User'
 
 ALLOWED_HOSTS = ['51.250.28.8', 'localhost', '127.0.0.1', 'web']
