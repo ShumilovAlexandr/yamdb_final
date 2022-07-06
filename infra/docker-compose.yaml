@@ -1,4 +1,3 @@
-# Версия докера
 version: '2.6' 
 
 services:
